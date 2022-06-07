@@ -8,13 +8,40 @@ body{
     flex: 1;
 }
 
+#backgroundVideo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    filter: brightness(1.2);
+    z-index: -2;
+    margin-top: 80px;
+}
+
 header{
-    background-color: #1F2937;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(31, 41, 55, 1);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 256px;
+    padding: 5px 50px 5px 50px;
+    box-sizing: border-box;
+}
+
+.headerMain{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:16px;
+}
+
+header img{
+    width: 40px;
+    height: 50px;;
 }
 
 header h3{
@@ -23,12 +50,15 @@ header h3{
 }
 
 header ul{
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     font-size: 18px;
     color: #E5E7EB;
     list-style-type: none;
-    display: flex;
-    gap: 16px;
+    gap: 100px;
+    padding: 0px;
+    margin: 0px;
 }
 
 header a{
@@ -37,14 +67,27 @@ header a{
 }
 
 .container-one{
-    background-color: #1F2937;
     display: flex;
-    gap: 64px;
     justify-content: center;
     align-items: center;
-    width: auto;
-    height: 500px;
-    padding: 0px 256px;
+    min-height: 110vh; 
+}
+
+.leftRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(31, 25, 25, 0.59);
+    padding: 50px;
+    border-radius: 35px;
+    width: 75%;
+}
+
+.container-one .left{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .container-one h2{
@@ -70,17 +113,18 @@ header a{
     width: fit-content;
 }
 
+
 .container-one .right{
-    width: 900px;
-    height: 300px;
-    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 400px;
 }
 
-.container-one .left{
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.container-one img{
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .container-two{
@@ -89,26 +133,14 @@ header a{
     align-items: center;
     flex-direction: column;
     padding: 36px;
+    min-height: 25vh;
+    background-color: rgba(31, 41, 55, 1);
 }
 
 .container-two .contents{
     display: flex;
     gap: 32px;
-}
-
-.container-two img{
-    width: 200px;
-    height: 200px;
-    border-color: #3882F6;
-    border-style: solid;
-    border-radius: 12px;
-}
-
-.container-two p{
-    font-size: 24px;
-    text-align: center;
-    width: 150px;
-    color: lightslategray;
+    flex-wrap: wrap;
 }
 
 .container-two h3{
@@ -117,33 +149,66 @@ header a{
     color: #1F2937;
 }
 
+.container-two img{
+    width: auto;
+    height: 200px;
+    max-width: 100%;
+    max-height: 100%;
+    border-color: #3882F6;
+    border-style: none;
+    border-radius: 12px;
+
+}
+
+.container-two p{
+    font-size: 24px;
+    text-align: center;
+    width: auto;
+    color: lightslategray;
+}
+
 .container-three{
     display: flex;
     flex-direction: column;
-    background-color: #E5E7EB;
     justify-content: center;
     align-items: center;
-    padding: 128px 256px;
+
+    /* The image used */
+    background-image: url("images/itone.jpg");
+    /* Set a specific height */
+    min-height: 75vh; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.quoteBlock{
+    width: 75%;
 }
 
 .container-three .quote{
+    line-height: 1.6;
     margin-bottom: 8px;
     font-size: 36px;
-    color: #1F2937;
-    flex-shrink: 1;
+    color:#ffffff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
 }
 
 .container-three .quoteBy{
     font-weight: bold;
-    font-size: 24px;
+    font-size: 32px;
     text-align: right;
+    color:#ffffff;
 }
 
 .container-four{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 128px;
+    min-height: 30vh;
+    background-color: rgba(31, 41, 55, 1);
 }
 
 .container-four .msg{
@@ -188,11 +253,16 @@ header a{
 }
 
 footer{
-    background-color: #1F2937;
     font-size: 18px;
     color: #E5E7EB;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 32px;
+
+    background-image: url("images/itone.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
